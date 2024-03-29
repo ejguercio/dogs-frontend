@@ -4,7 +4,6 @@ import { DogListComponent } from './dog-list/dog-list.component';
 import { DogCardComponent } from './dog-card/dog-card.component';
 import { DogCreateComponent } from './dog-create/dog-create.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'list', component: DogListComponent },
@@ -13,6 +12,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DogListComponent, DogCardComponent, DogCreateComponent],
-  imports: [CommonModule, HttpClientModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class DogsModule {}
