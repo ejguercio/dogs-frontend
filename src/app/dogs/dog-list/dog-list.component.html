@@ -1,1 +1,7 @@
-<p>dog-list works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let dog of dogs">
+      <app-dog-card [dog]="dog"></app-dog-card>
+    </div>
+  </div>
+</div>

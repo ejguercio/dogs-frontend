@@ -1,1 +1,10 @@
-<p>dog-card works!</p>
+<div class="card">
+  <img class="card-img-top" [src]="dog.image" alt="Imagen de perro" />
+  <div class="card-body">
+    <h5 class="card-title">{{ dog.name }}</h5>
+    <p class="card-text">{{ dog.temperament }}</p>
+    <p class="card-text">
+      <small class="text-muted">Life Span: {{ dog.life_span }}</small>
+    </p>
+  </div>
+</div>
