@@ -1,8 +1,8 @@
 .img-cover {
   object-fit: cover;
-  height: 200px; /* Define una altura fija para todas las imágenes */
+  height: 220px;
 }
 
 .card-min-height {
-  min-height: 400px; /* Ajusta este valor según lo que necesites */
+  min-height: 400px;
 }
