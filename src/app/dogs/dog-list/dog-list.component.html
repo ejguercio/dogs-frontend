@@ -1,7 +1,31 @@
 <div class="container mt-3">
   <div class="row">
-    <div class="col-md-3" *ngFor="let dog of dogs">
+    <div
+      class="col-md-3"
+      *ngFor="
+        let dog of dogs
+          | slice
+            : currentPage * itemsPerPage
+            : (currentPage + 1) * itemsPerPage
+      "
+    >
       <app-dog-card [dog]="dog"></app-dog-card>
     </div>
   </div>
+  <!-- Controles de paginación -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li
+        class="page-item"
+        *ngFor="
+          let page of [].constructor(Math.ceil(dogs.length / itemsPerPage));
+          let i = index
+        "
+      >
+        <a class="page-link" href="#" (click)="setCurrentPage(i, $event)">{{
+          i + 1
+        }}</a>
+      </li>
+    </ul>
+  </nav>
 </div>

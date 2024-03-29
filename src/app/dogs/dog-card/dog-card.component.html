@@ -1,5 +1,9 @@
-<div class="card">
-  <img class="card-img-top" [src]="dog.image" alt="Imagen de perro" />
+<div class="card card-min-height">
+  <img
+    class="card-img-top img-fluid img-cover"
+    [src]="dog.image"
+    alt="Imagen de perro"
+  />
   <div class="card-body">
     <h5 class="card-title">{{ dog.name }}</h5>
     <p class="card-text">{{ dog.temperament }}</p>

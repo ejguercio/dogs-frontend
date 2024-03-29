@@ -8,7 +8,11 @@ import { Dog } from '../dog.service';
   styleUrls: ['./dog-list.component.css'],
 })
 export class DogListComponent implements OnInit {
-  dogs: Dog[] = [];
+  dogs: Dog[] = []; // Todos los perros
+  paginatedDogs: Dog[] = []; // perros de la pagina actual
+  currentPage = 1;
+  itemsPerPage = 8;
+  Math = Math; // Exponer Math para usar en la plantilla
 
   constructor(private dogService: DogService) {}
 
@@ -21,5 +25,19 @@ export class DogListComponent implements OnInit {
       error: (error) =>
         console.error('Hubo un error al obtener los perros', error),
     });
+  }
+  paginateDogs() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    this.paginatedDogs = this.dogs.slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
+  }
+
+  // Método para cambiar de página
+  setCurrentPage(page: number, event: MouseEvent): void {
+    event.preventDefault(); // Previene la redirección
+    this.currentPage = page;
+    // Aquí puedes agregar cualquier lógica adicional necesaria cuando se cambia de página
   }
 }
