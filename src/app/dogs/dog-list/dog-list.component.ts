@@ -20,7 +20,7 @@ export class DogListComponent implements OnInit {
     this.dogService.getDogs().subscribe({
       next: (data) => {
         this.dogs = data;
-        console.log(this.dogs);
+        // console.log(this.dogs);
       },
       error: (error) =>
         console.error('Hubo un error al obtener los perros', error),

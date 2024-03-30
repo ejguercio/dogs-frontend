@@ -1,0 +1,8 @@
+.bg-landing {
+  background: url("/assets/camilo-fierro-unsplash.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5);
+}
