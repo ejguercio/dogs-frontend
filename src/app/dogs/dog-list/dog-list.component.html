@@ -9,7 +9,9 @@
             : (currentPage + 1) * itemsPerPage
       "
     >
-      <app-dog-card [dog]="dog"></app-dog-card>
+      <a [routerLink]="['/dogs/detail', dog.id]">
+        <app-dog-card [dog]="dog"></app-dog-card>
+      </a>
     </div>
   </div>
   <!-- Controles de paginación TODO modularizar -->
@@ -17,7 +19,7 @@
     class="d-flex justify-content-center mt-3"
     aria-label="Page navigation example"
   >
-    <ul class="pagination">
+    <ul class="pagination flex-wrap">
       <li
         class="page-item"
         *ngFor="
@@ -25,9 +27,9 @@
           let i = index
         "
       >
-        <a class="page-link" href="#" (click)="setCurrentPage(i, $event)">{{
-          i + 1
-        }}</a>
+        <a class="page-link" href="#" (click)="setCurrentPage(i, $event)">
+          {{ i + 1 }}
+        </a>
       </li>
     </ul>
   </nav>

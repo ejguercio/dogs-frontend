@@ -4,14 +4,21 @@ import { DogListComponent } from './dog-list/dog-list.component';
 import { DogCardComponent } from './dog-card/dog-card.component';
 import { DogCreateComponent } from './dog-create/dog-create.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DogDetailComponent } from './dog-detail/dog-detail.component';
 
 const routes: Routes = [
   { path: 'list', component: DogListComponent },
+  { path: 'detail/:id', component: DogDetailComponent },
   { path: 'create', component: DogCreateComponent },
 ];
 
 @NgModule({
-  declarations: [DogListComponent, DogCardComponent, DogCreateComponent],
+  declarations: [
+    DogListComponent,
+    DogCardComponent,
+    DogCreateComponent,
+    DogDetailComponent,
+  ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class DogsModule {}

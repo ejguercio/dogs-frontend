@@ -1,0 +1,12 @@
+<div *ngIf="dog; else loading">
+  <h1>{{ dog.name }}</h1>
+  <h2>{{ dog.height }}</h2>
+  <h2>{{ dog.weight }}</h2>
+  <h2>{{ dog.maxWeight }}</h2>
+  <h2>{{ dog.life_span }}</h2>
+  <h2>{{ dog.temperament }}</h2>
+</div>
+
+<ng-template #loading>
+  <p>Cargando...</p>
+</ng-template>
