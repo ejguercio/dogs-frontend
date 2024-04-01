@@ -1,13 +1,13 @@
 <div class="card" *ngIf="dog; else loading">
-  <h1>Name: {{ dog.name }}</h1>
+  <h1>{{ dog.name }}</h1>
   <h2>Height: {{ dog.height }}</h2>
   <h2>Weight: {{ dog.weight }}</h2>
   <h2>Max Weight: {{ dog.maxWeight }}</h2>
   <h2>Life Span: {{ dog.life_span }}</h2>
   <h2>Temperament:{{ dog.temperament }}</h2>
+  <app-navigate-button text="Volver" path="/dogs/list"></app-navigate-button>
 </div>
-<button (click)="redirectToList()">ATRAS</button>
 
 <ng-template #loading>
-  <p>Cargando...</p>
+  <app-spinner></app-spinner>
 </ng-template>

@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div *ngIf="dogs.length > 0; else loading" class="container mt-3">
   <div class="row">
     <div
       class="col-md-3"
@@ -34,3 +34,7 @@
     </ul>
   </nav>
 </div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>
