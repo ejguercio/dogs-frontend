@@ -1,11 +1,12 @@
-<div *ngIf="dog; else loading">
-  <h1>{{ dog.name }}</h1>
-  <h2>{{ dog.height }}</h2>
-  <h2>{{ dog.weight }}</h2>
-  <h2>{{ dog.maxWeight }}</h2>
-  <h2>{{ dog.life_span }}</h2>
-  <h2>{{ dog.temperament }}</h2>
+<div class="card" *ngIf="dog; else loading">
+  <h1>Name: {{ dog.name }}</h1>
+  <h2>Height: {{ dog.height }}</h2>
+  <h2>Weight: {{ dog.weight }}</h2>
+  <h2>Max Weight: {{ dog.maxWeight }}</h2>
+  <h2>Life Span: {{ dog.life_span }}</h2>
+  <h2>Temperament:{{ dog.temperament }}</h2>
 </div>
+<button (click)="redirectToList()">ATRAS</button>
 
 <ng-template #loading>
   <p>Cargando...</p>

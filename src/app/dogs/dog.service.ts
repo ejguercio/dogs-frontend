@@ -27,7 +27,7 @@ export class DogService {
     return this.http.get<Dog[]>(this.apiUrl);
   }
 
-  getDogById(id: number | string): Observable<Dog> {
-    return this.http.get<Dog>(`${this.apiUrl}/${id}`);
+  getDogById(id: number | string): Observable<Dog[]> {
+    return this.http.get<Dog[]>(`${this.apiUrl}/${id}`);
   }
 }
