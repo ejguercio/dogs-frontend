@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Dog } from '../dog.service';
+import { Dog } from '../../models/dog.interface';
 
 @Component({
   selector: 'app-dog-card',

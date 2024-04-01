@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DogService } from '../dog.service';
-import { Dog } from '../dog.service';
+import { Dog } from '../../models/dog.interface';
 
 @Component({
   selector: 'app-dog-list',

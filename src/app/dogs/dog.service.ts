@@ -1,19 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-//TODO REFACTORIZAR INTERFACE
-export interface Dog {
-  id: string | number;
-  name: string;
-  height: string;
-  weight: string;
-  maxWeight: number;
-  life_span: string;
-  image: string;
-  temperament: string;
-  created: boolean;
-}
+import { Dog } from '../models/dog.interface';
 
 @Injectable({
   providedIn: 'root',
