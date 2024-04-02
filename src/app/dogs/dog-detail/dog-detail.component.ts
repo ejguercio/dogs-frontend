@@ -10,6 +10,7 @@ import { Dog } from '../../models/dog.interface';
 })
 export class DogDetailComponent implements OnInit {
   dog: Dog | undefined;
+
   constructor(
     private dogService: DogService,
     private route: ActivatedRoute,
@@ -21,7 +22,6 @@ export class DogDetailComponent implements OnInit {
 
     this.dogService.getDogById(dogId).subscribe((dog) => {
       this.dog = dog[0];
-      console.log(dog);
     });
   }
   redirectToList() {

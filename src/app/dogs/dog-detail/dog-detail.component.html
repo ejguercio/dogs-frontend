@@ -1,10 +1,36 @@
-<div class="card" *ngIf="dog; else loading">
-  <h1>{{ dog.name }}</h1>
-  <h2>Height: {{ dog.height }}</h2>
-  <h2>Weight: {{ dog.weight }}</h2>
-  <h2>Max Weight: {{ dog.maxWeight }}</h2>
-  <h2>Life Span: {{ dog.life_span }}</h2>
-  <h2>Temperament:{{ dog.temperament }}</h2>
+<div
+  class="card d-flex flex-column justify-content-center align-items-center p-3 bg-dark text-white"
+  *ngIf="dog; else loading"
+  style="max-width: 100%; min-height: 100vh"
+>
+  <img
+    src="{{ dog.image }}"
+    class="img-fluid border-2 rounded"
+    alt="Dog image"
+    style="max-width: 400px"
+  />
+  <h2 class="mt-4 text-center text-success">{{ dog.name }}</h2>
+
+  <div class="text-center">
+    <h3>Altura:</h3>
+    <span>{{ dog.height }}</span>
+  </div>
+
+  <div class="text-center">
+    <h3>Peso:</h3>
+    <span>{{ dog.weight }}</span>
+  </div>
+
+  <div class="text-center">
+    <h3>Expectativa de vida:</h3>
+    <span>{{ dog.life_span }}</span>
+  </div>
+
+  <div class="text-center mb-4" style="max-width: 400px">
+    <h3>Temperamento:</h3>
+    <span>{{ dog.temperament }}</span>
+  </div>
+
   <app-navigate-button text="Volver" path="/dogs/list"></app-navigate-button>
 </div>
 

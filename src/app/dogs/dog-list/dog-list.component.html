@@ -1,4 +1,5 @@
-<div *ngIf="dogs.length > 0; else loading" class="container mt-3">
+<app-navbar></app-navbar>
+<div *ngIf="dogs.length > 0; else loading" class="container-fluid">
   <div class="row">
     <div
       class="col-md-3"
@@ -9,7 +10,7 @@
             : (currentPage + 1) * itemsPerPage
       "
     >
-      <a [routerLink]="['/dogs/detail', dog.id]">
+      <a [routerLink]="['/dogs/detail', dog.id]" class="text-decoration-none">
         <app-dog-card [dog]="dog"></app-dog-card>
       </a>
     </div>
