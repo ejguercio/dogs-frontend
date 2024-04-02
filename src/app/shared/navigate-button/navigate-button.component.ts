@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavigateButtonComponent {
   @Input() text: string = '';
   @Input() path: string = '';
+
   constructor(private router: Router) {}
 
   navigate() {

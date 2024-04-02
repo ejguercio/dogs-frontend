@@ -11,11 +11,7 @@ import { Dog } from '../../models/dog.interface';
 export class DogDetailComponent implements OnInit {
   dog: Dog | undefined;
 
-  constructor(
-    private dogService: DogService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(private dogService: DogService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     const dogId = this.route.snapshot.params['id'];
@@ -23,8 +19,5 @@ export class DogDetailComponent implements OnInit {
     this.dogService.getDogById(dogId).subscribe((dog) => {
       this.dog = dog[0];
     });
-  }
-  redirectToList() {
-    this.router.navigate(['/dogs/list']);
   }
 }
