@@ -17,14 +17,7 @@ export class DogListComponent implements OnInit {
   constructor(private dogService: DogService) {}
 
   ngOnInit() {
-    this.dogService.getDogs().subscribe({
-      next: (data) => {
-        this.dogs = data;
-        // console.log(this.dogs);
-      },
-      error: (error) =>
-        console.error('Hubo un error al obtener los perros', error),
-    });
+    this.dogService.getDogs().subscribe((dog) => (this.dogs = dog));
   }
   paginateDogs() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
