@@ -6,6 +6,8 @@ import { DogCreateComponent } from './dog-create/dog-create.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DogDetailComponent } from './dog-detail/dog-detail.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgSelectOption } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'list', component: DogListComponent },
@@ -20,6 +22,11 @@ const routes: Routes = [
     DogCreateComponent,
     DogDetailComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+  ],
 })
 export class DogsModule {}

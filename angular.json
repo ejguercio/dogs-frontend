@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dogs-client:build:production"
+              "buildTarget": "dogs-client:build:production"
             },
             "development": {
-              "browserTarget": "dogs-client:build:development"
+              "buildTarget": "dogs-client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dogs-client:build"
+            "buildTarget": "dogs-client:build"
           }
         },
         "test": {

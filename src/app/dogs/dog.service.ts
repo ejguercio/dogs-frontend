@@ -18,4 +18,25 @@ export class DogService {
   getDogById(id: number | string): Observable<Dog[]> {
     return this.http.get<Dog[]>(`${this.urlBase}/${id}`);
   }
+
+  formatAndPost(formData: {
+    name: string;
+    minHeight: string;
+    maxHeight: string;
+    minWeight: string;
+    maxWeight: string;
+    minLife: string;
+    maxLife: string;
+    selectedTemperaments: Array<string>;
+  }) {
+    const newDog = {
+      name: formData.name,
+      height: `${formData.minHeight} - ${formData.maxHeight}`,
+      weight: `${formData.minWeight} - ${formData.maxWeight}`,
+      maxWeight: formData.maxWeight,
+      life_span: `${formData.minLife} - ${formData.maxLife}`,
+      temperament: formData.selectedTemperaments,
+    };
+    return this.http.post<Dog[]>(this.urlBase, newDog);
+  }
 }

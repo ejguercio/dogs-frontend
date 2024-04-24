@@ -1,2 +1,88 @@
 <app-navbar></app-navbar>
-<p>dog-create works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="mb-4 text-center">Create Dog</h2>
+      <form [formGroup]="dogForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+          />
+        </div>
+        <div class="form-group">
+          <label>Weight Range (kg)</label>
+          <div class="d-flex">
+            <input
+              type="number"
+              class="form-control mr-2"
+              formControlName="minWeight"
+              placeholder="Minimum"
+            />
+            <input
+              type="number"
+              class="form-control"
+              formControlName="maxWeight"
+              placeholder="Maximum"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Height Range (cm)</label>
+          <div class="d-flex">
+            <input
+              type="number"
+              class="form-control mr-2"
+              formControlName="minHeight"
+              placeholder="Minimum"
+            />
+            <input
+              type="number"
+              class="form-control"
+              formControlName="maxHeight"
+              placeholder="Maximum"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Life Expectancy (years)</label>
+          <div class="d-flex">
+            <input
+              type="number"
+              class="form-control mr-2"
+              formControlName="minLife"
+              placeholder="Minimum"
+            />
+            <input
+              type="number"
+              class="form-control"
+              formControlName="maxLife"
+              placeholder="Maximum"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="temperaments">Temperaments</label>
+          <select
+            class="form-control"
+            formControlName="selectedTemperaments"
+            multiple
+          >
+            <option
+              *ngFor="let temperament of temperaments"
+              [ngValue]="temperament"
+            >
+              {{ temperament }}
+            </option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Create Dog</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
